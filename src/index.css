@@ -7,7 +7,23 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.container {
+  
+}
+.column {
+  border: 5px solid #fff;
+  background-color: burlywood;
+  padding: 10px;
+}
+#add-to-cart-btn {
+  float: right;
+}
+
+.product-name {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.badge {
+  margin-left: 5px;
 }

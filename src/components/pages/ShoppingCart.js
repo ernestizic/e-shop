@@ -1,5 +1,6 @@
 import React, { useContext } from 'react';
 import { CartContext } from '../contexts/CartContext';
+import Navbar from '../ui/Navbar';
 
 const ShoppingCart = () => {
     //using context
@@ -7,14 +8,15 @@ const ShoppingCart = () => {
     const {addToCart, removeFromCart} = useContext(CartContext);
 
     //variables
-    //a = accumulator and c = currentItem
-    const itemsPrice = cartItems.reduce((a, c) => a + c.price * c.qty, 0);
+    //acc = accumulator and curr = currentItem
+    const itemsPrice = cartItems.reduce((acc, curr) => acc + curr.price * curr.qty, 0);
     const taxPrice = itemsPrice * 0.14;
     const shippingPrice = itemsPrice > 2000 ? 0 : 50;
     const totalPrice = itemsPrice + taxPrice + shippingPrice;
 
     return ( 
-        <div style={{background: "grey"}}>
+        <div>
+            <Navbar />
             <h4> Cart Items </h4>
             {cartItems.length === 0 ? (
                 <div>Cart is empty</div>
@@ -22,6 +24,7 @@ const ShoppingCart = () => {
                 <div className="container">
                     {cartItems.map(item => (
                         <div key={item.id} className="row">
+                            <img className="img-fluid" src={item.img}/>
                             <div>{item.name}</div>
                             <div>
                                 <button onClick={()=> addToCart(item) } className="btn btn-primary">+</button>

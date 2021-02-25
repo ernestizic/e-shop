@@ -2,14 +2,16 @@ import React from 'react';
 import CartContextProvider from '../contexts/CartContext';
 import ProductContextProvider from '../contexts/ProductContext';
 import ProductGrid from "../products/ProductGrid"
+import Navbar from '../ui/Navbar';
 import ShoppingCart from './ShoppingCart';
+
 
 const IndexPage = () => {
     return (
         <div>
             <ProductContextProvider>
                 <CartContextProvider>
-                    <ShoppingCart />
+                    <Navbar />
                     <ProductGrid />
                 </CartContextProvider>
             </ProductContextProvider> 

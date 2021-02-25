@@ -1,12 +1,13 @@
 import React, {useContext} from 'react';
-//import { ProductContext } from '../contexts/ProductContext';
 import { Link } from 'react-router-dom';
 import { CartContext } from '../contexts/CartContext';
  
 const Navbar = () => {
-    const {cartItems} = useContext(CartContext)
+    const {cartItems} = useContext(CartContext);
+
+ 
     return ( 
-        <nav className="navbar navbar-expand-lg navbar-light bg-light">
+        <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
             <div className="container-fluid">
                 <Link className="navbar-brand" to="/">ADD TO CART </Link>
                 <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
@@ -18,7 +19,7 @@ const Navbar = () => {
                             <Link className="nav-link active" aria-current="page" to="/">Home</Link>
                         </li>
                         <li className="nav-item">
-                            <a className="nav-link disabled" href="#">Features</a>
+                            <Link className="nav-link disabled" to="/features">Features</Link>
                         </li>
                         <li className="nav-item">
                             <a className="nav-link disabled" href="#">Contact</a>

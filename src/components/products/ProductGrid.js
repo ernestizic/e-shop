@@ -1,9 +1,11 @@
 import React, { useContext } from 'react';
+//import { CartContext } from '../contexts/CartContext';
 import { ProductContext } from '../contexts/ProductContext';
 import ProductItem from './ProductItem';
 
 const ProductGrid = () => {
     const {products} = useContext(ProductContext);
+    //const {cartItems} = useContext(CartContext)
 
     let grid = products.length ? (
         <div className="container">

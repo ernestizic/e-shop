@@ -37,9 +37,14 @@ const CartContextProvider = (props) => {
             setCartItems(cartItems.map(x => x.id === product.id ? {...exist, qty: exist.qty - 1} : x ))
         }
     }
+
+    //Empty cart
+    const emptyCart =()=> {
+        setCartItems([])
+    }
     
     return ( 
-        <CartContext.Provider  value={{cartItems, addToCart, removeFromCart}}>
+        <CartContext.Provider  value={{cartItems, addToCart, removeFromCart, emptyCart}}>
             {props.children}
         </CartContext.Provider>
      );

@@ -1,5 +1,5 @@
 import React from 'react';
-//import Navbar from "./components/ui/Navbar";
+import Navbar from "./components/ui/Navbar";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 import IndexPage from "./components/pages/IndexPage";
 import ShoppingCart from "./components/pages/ShoppingCart";
@@ -10,7 +10,12 @@ function App() {
   return (
     <BrowserRouter>
       <div className="App">
-
+        {/* 
+        <CartContextProvider>
+          <Navbar />
+        </CartContextProvider>
+        */}
+        
         <Switch>
           <Route exact path="/" component={IndexPage} />
           <CartContextProvider>
@@ -20,7 +25,7 @@ function App() {
         </Switch>
 
       </div>
-    </BrowserRouter>
+    </BrowserRouter>    
   );
 }
 

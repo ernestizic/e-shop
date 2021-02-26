@@ -32,8 +32,16 @@ body {
   width: 150px;
 }
 #items-btn{
-  padding-top: 0;
-  padding-bottom: 0;
+  border: none;
+  padding: 7px;
+}
+#items-btn:active{
+  border: 2px solid black;
+  padding: 7px;
+}
+#qty-btn{
+  border: none;
+  padding-left: 10px;
 }
 
 .product-name {
@@ -46,4 +54,5 @@ body {
 }
 .table{
   border: 1px solid grey;
+  margin-top: 40px;
 }

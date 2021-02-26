@@ -16,10 +16,12 @@ const ShoppingCart = () => {
     return ( 
         <div>
             <Navbar />
-            <button onClick={emptyCart}>Empty cart</button>
-            <h4> Cart Items </h4>
+
             {cartItems.length === 0 ? (
-                <div>Cart is empty</div>
+                <div style={{textAlign: "center", padding: 0}}>
+                    <img src="img/cart.png" className="img-fluid" />
+                    <h3>Your cart is empty</h3>
+                </div>
             ) : (
                 <div className="container">
                     {cartItems.map(item => (
@@ -31,22 +33,24 @@ const ShoppingCart = () => {
                                             <th></th>
                                             <th>QUANTITY</th>
                                             <th>UNIT PRICE</th>
-                                            <th>TAX PRICE</th>
                                             <th>SUBTOTAL</th>
                                         </tr>
                                     </thead>
                                     <tbody>
                                         <tr>
-                                            <td className="table-data">
+                                            <td>
                                                 <img className="img-fluid cart-img" src={item.img}/>                                               
                                             </td>
-                                            <td className="table-data"> <p> {item.name} </p></td>
+                                            <td> <p> {item.name} </p></td>
                                             <td> 
-                                                <button onClick={()=> addToCart(item) } className="btn btn-primary" id="items-btn">+</button> {item.qty} <button onClick={()=> removeFromCart(item) } className="btn btn-danger" id="items-btn">-</button> 
+                                                <div class="btn-group">
+                                                    <button id="items-btn" type="button" onClick={()=> removeFromCart(item) } type="button">-</button>
+                                                    <button id="qty-btn" type="button">{item.qty}</button>
+                                                    <button id="items-btn" type="button" onClick={()=> addToCart(item)} type="button">+</button>
+                                                </div>
                                             </td>
-                                            <td className="table-data"><p>{item.price}</p></td>
-                                            <td className="table-data">{taxPrice.toFixed(2)}</td>
-                                            <td className="table-data"><p>{item.price * item.qty}</p></td>
+                                            <td><p> {item.price}</p></td>
+                                            <td><p>{item.price * item.qty}</p></td>
                                         </tr>
                                     </tbody>
                                 </table>
@@ -55,8 +59,10 @@ const ShoppingCart = () => {
                 </div>
             )  }
 
+
             {cartItems.length !== 0 && (
-                <div>
+                <div className="container">
+                    <button className="btn btn-danger" onClick={emptyCart}>Empty cart</button>
                     <hr />
                     <p>Items Price: ${itemsPrice.toFixed(2)}</p>
 

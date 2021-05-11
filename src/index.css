@@ -1,22 +1,55 @@
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+.navbar .navbar-brand {
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+  font-size: 27px;
+}
 
 .item-column {
   padding: 10px;
+  position: relative;
 }
+.item-column img {
+  border-radius: 5px;
+  transition: 0.5s ease;
+  backface-visibility: hidden;
+}
+.item-column:hover img {
+  opacity: 0.6;
+}
+.item-column .middle {
+  transition: 0.5s ease;
+  opacity: 0;
+  position: absolute;
+  top: 30%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+}
+.item-column:hover .middle {
+  opacity: 1;
+}
+.view {
+  background-color: black;
+  color: white;
+  font-size: 16px;
+  padding: 10px 15px;
+  border-radius: 50%;
+}
+
 #add-to-cart-btn {
   width: 100%;
   border-radius: 5px;
   -webkit-transition-duration: 0.4s;
   transition-duration: 0.4s;
 }
-#add-to-cart-btn:hover{
+#add-to-cart-btn:hover {
   background-color: black;
   color: white;
 }
@@ -28,18 +61,18 @@ body {
   box-shadow: 0 5px #666;
   transform: translateY(4px);
 }
-.cart-img{
+.cart-img {
   width: 150px;
 }
-#items-btn{
+#items-btn {
   border: none;
   padding: 7px;
 }
-#items-btn:active{
+#items-btn:active {
   border: 2px solid black;
   padding: 7px;
 }
-#qty-btn{
+#qty-btn {
   border: none;
   padding-left: 10px;
 }
@@ -52,7 +85,40 @@ body {
 .badge {
   margin-left: 5px;
 }
-.table{
+.table {
   border: 1px solid grey;
   margin-top: 40px;
+}
+.wrapper {
+  margin-top: 80px;
+}
+.sidebar-wrapper {
+  position: fixed;
+  width: 20%;
+  z-index: 1;
+  overflow-y: hidden;
+  opacity: 0.9;
+  padding-top: 16px;
+}
+.sidebar-nav {
+  padding: 0;
+  list-style-type: none;
+}
+.sidebar-nav li {
+  text-indent: 5px;
+  line-height: 40px;
+}
+.sidebar-nav li a {
+  display: block;
+  text-decoration: none;
+  color: black;
+}
+.wrapper .sidebar-wrapper .sidebar-nav li a:hover {
+  color: #fff;
+  background: black;
+  cursor: pointer;
+}
+
+.main-content-wrapper {
+  margin-left: 27%;
 }

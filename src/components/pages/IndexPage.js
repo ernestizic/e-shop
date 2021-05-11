@@ -1,20 +1,28 @@
-import React from 'react';
-import CartContextProvider from '../contexts/CartContext';
-import ProductContextProvider from '../contexts/ProductContext';
+import React, { useContext } from 'react';
+import { ProductContext } from '../contexts/ProductContext';
 import ProductGrid from "../products/ProductGrid"
-import Navbar from '../ui/Navbar';
-import ShoppingCart from './ShoppingCart';
+import Search from '../ui/Search';
 
 
 const IndexPage = () => {
+    const {gifts, animals, vehicles, tech, lad} = useContext(ProductContext)
     return (
-        <div>
-            <ProductContextProvider>
-                <CartContextProvider>
-                    <Navbar />
-                    <ProductGrid />
-                </CartContextProvider>
-            </ProductContextProvider> 
+        <div className='container wrapper'>
+            <div className="sidebar-wrapper">
+                <Search />
+                <h6>Category</h6>
+                <ul className="sidebar-nav">
+                    <li><a>All</a></li>
+                    <li><a onClick={vehicles}>Vehicles</a></li>
+                    <li><a onClick={animals}>Animals</a></li>
+                    <li><a onClick={gifts}>Gifts</a></li>
+                    <li><a onClick={tech}>Technology</a></li>
+                    <li><a onClick={lad}>Ladies</a></li>
+                </ul>
+            </div>
+            <div className='main-content-wrapper'>
+                <ProductGrid />
+            </div>
         </div>
      );
 }

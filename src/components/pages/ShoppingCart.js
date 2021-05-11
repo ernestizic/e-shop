@@ -14,8 +14,7 @@ const ShoppingCart = () => {
     const totalPrice = itemsPrice + taxPrice + shippingPrice;
 
     return ( 
-        <div>
-            <Navbar />
+        <div className='wrapper'>
 
             {cartItems.length === 0 ? (
                 <div style={{textAlign: "center", padding: 0}}>

@@ -8,11 +8,11 @@ const ProductGrid = () => {
     //const {cartItems} = useContext(CartContext)
 
     let grid = products.length ? (
-        <div className="container">
+        <div>
             <h1 style={{padding: "12px"}}>Products</h1>
             <div className="row">
                 {products.map(product => (
-                    <ProductItem key={product.id} product={product} />
+                    <ProductItem key={product._id} product={product} />
                 ))}
             </div>
         </div>

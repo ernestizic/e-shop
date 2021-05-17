@@ -5,14 +5,14 @@ import Search from '../ui/Search';
 
 
 const IndexPage = () => {
-    const {gifts, animals, vehicles, tech, lad} = useContext(ProductContext)
+    const {all, gifts, animals, vehicles, tech, lad} = useContext(ProductContext)
     return (
         <div className='container wrapper'>
             <div className="sidebar-wrapper">
                 <Search />
                 <h6>Category</h6>
                 <ul className="sidebar-nav">
-                    <li><a>All</a></li>
+                    <li><a onClick={all}>All</a></li>
                     <li><a onClick={vehicles}>Vehicles</a></li>
                     <li><a onClick={animals}>Animals</a></li>
                     <li><a onClick={gifts}>Gifts</a></li>

@@ -10,6 +10,9 @@ body {
   font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
   font-size: 27px;
 }
+.content-wrap {
+  padding-bottom: 120px;
+}
 
 .item-column {
   padding: 10px;
@@ -121,4 +124,11 @@ body {
 
 .main-content-wrapper {
   margin-left: 27%;
+}
+
+.footer {
+  background-color: black;
+  text-align: center;
+  padding: 30px;
+  color: #fff;
 }

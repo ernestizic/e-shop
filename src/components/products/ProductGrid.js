@@ -4,14 +4,14 @@ import { ProductContext } from '../contexts/ProductContext';
 import ProductItem from './ProductItem';
 
 const ProductGrid = () => {
-    const {products} = useContext(ProductContext);
+    const {products, filtered} = useContext(ProductContext);
     //const {cartItems} = useContext(CartContext)
 
-    let grid = products.length ? (
+    let grid = filtered.length ? (
         <div>
-            <h1 style={{padding: "12px"}}>Products</h1>
+            <p style={{padding: "12px"}}>{filtered.length} products found</p>
             <div className="row">
-                {products.map(product => (
+                {filtered.map(product => (
                     <ProductItem key={product._id} product={product} />
                 ))}
             </div>

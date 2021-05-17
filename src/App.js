@@ -7,6 +7,7 @@ import ProductContextProvider from './components/contexts/ProductContext';
 import CartContextProvider from "./components/contexts/CartContext";
 import Features from "./components/pages/Features";
 import ProductDetail from './components/products/ProductDetail';
+import Footer from './components/ui/Footer';
 
 function App() {
   return (
@@ -15,13 +16,17 @@ function App() {
         <ProductContextProvider>
         <CartContextProvider>
         <Navbar />
-        
-        <Switch>
-          <Route exact path="/" component={IndexPage} />
-          <Route path="/cart" component={ShoppingCart} />
-          <Route path="/features" component={Features} />
-          <Route path="/product/:product_id" component={ProductDetail} />
-        </Switch>
+
+          <div className="content-wrap">
+            <Switch>
+              <Route exact path="/" component={IndexPage} />
+              <Route path="/cart" component={ShoppingCart} />
+              <Route path="/features" component={Features} />
+              <Route path="/product/:product_id" component={ProductDetail} />
+            </Switch>
+          </div>
+
+        <Footer />
 
       </CartContextProvider>
       </ProductContextProvider>

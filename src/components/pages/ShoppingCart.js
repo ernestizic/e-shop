@@ -1,5 +1,6 @@
 import React, { useContext } from 'react';
 import { CartContext } from '../contexts/CartContext';
+import { Link } from 'react-router-dom';
 import Navbar from '../ui/Navbar';
 
 const ShoppingCart = () => {
@@ -17,9 +18,11 @@ const ShoppingCart = () => {
         <div className='wrapper'>
 
             {cartItems.length === 0 ? (
-                <div style={{textAlign: "center", padding: 0}}>
+                <div className="empty-cart">
                     <img src="img/cart.png" className="img-fluid" />
                     <h3>Your cart is empty</h3>
+                    <p style={{color: 'grey'}}>Start shopping to add items to your cart</p>
+                    <Link to="/">Back to homepage</Link>
                 </div>
             ) : (
                 <div className="container">
@@ -40,7 +43,7 @@ const ShoppingCart = () => {
                                             <td>
                                                 <img className="img-fluid cart-img" src={item.img}/>                                               
                                             </td>
-                                            <td> <p> {item.name} </p></td>
+                                            <td> <p style={{overflow: 'hidden'}}> {item.name} </p></td>
                                             <td> 
                                                 <div class="btn-group">
                                                     <button id="items-btn" type="button" onClick={()=> removeFromCart(item) } type="button">-</button>
@@ -62,14 +65,18 @@ const ShoppingCart = () => {
             {cartItems.length !== 0 && (
                 <div className="container">
                     <button className="btn btn-danger" onClick={emptyCart}>Empty cart</button>
+                    <Link to='/' className="btn btn-primary" style={{float: 'right'}}>Continue Shopping</Link>
                     <hr />
-                    <p>Items Price: ${itemsPrice.toFixed(2)}</p>
 
-                    <p>Tax Price: ${taxPrice.toFixed(2)}</p>
+                    <div className='totals'>
+                        <p style={{fontWeight: 'bold'}}>Items Price: <span style={{float: 'right'}}>${itemsPrice.toFixed(2)}</span></p>
 
-                    <p>Shipping Price: ${shippingPrice.toFixed(2)}</p>
+                        <p>Tax Price: <span style={{float: 'right'}}>${taxPrice.toFixed(2)}</span></p>
 
-                    <p><strong>Total Price:</strong> ${totalPrice.toFixed(2)}</p>
+                        <p>Shipping Price: <span style={{float: 'right'}}>${shippingPrice.toFixed(2)}</span></p>
+                        <hr/>
+                        <p style={{fontSize: '30px'}}>Total Price:<span style={{float: 'right'}}>${totalPrice.toFixed(2)}</span></p>
+                    </div>
 
                 </div>
                 

@@ -12,7 +12,7 @@ const ProductGrid = () => {
             <p style={{padding: "12px"}}>{filtered.length} products found</p>
             <div className="row">
                 {filtered.map(product => (
-                    <ProductItem key={product._id} product={product} />
+                    <ProductItem key={product.id} product={product}/>
                 ))}
             </div>
         </div>

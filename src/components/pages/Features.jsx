@@ -4,8 +4,8 @@ import { CartContext } from '../contexts/CartContext';
 const Features = () => {
     const {cartItems} = useContext(CartContext);
     return ( 
-        <div>
-            <h4>You added {cartItems.length} to your cart </h4>
+        <div className='features'>
+            <h4>{cartItems.length}</h4>
         </div>
      );
 }

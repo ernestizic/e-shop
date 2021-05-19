@@ -1,25 +1,48 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import { useParams } from 'react-router-dom';
+import { ProductContext } from '../contexts/ProductContext';
+import Rating from '../ui/Rating';
+import {Link} from 'react-router-dom'
+import { CartContext } from '../contexts/CartContext';
 
 const ProductDetail = () => {
+    const {filtered, products} = useContext(ProductContext);
+    const {addToCart} = useContext(CartContext);
     const {product_id} = useParams();
-    console.log(product_id)
-    const [productDetail, setProductDetail] = useState(null)
+
+    const [productDetail, setProductDetail] = useState(null);
+
     useEffect(() => {
-        setProductDetail(product_id)
+        setProductDetail(products.find(x => x.id == product_id))
     }, [])
 
-    const prod = productDetail ? (
-        <div>{product_id.name}</div>
+    const prodetail = productDetail ? (
+        <div className='container'>
+            <Link to='/' class='btn btn-dark' style={{margin: '20px 0'}}>BACK TO PRODUCTS</Link>
+            <div className='row'>
+                <div className='col-lg-6'>
+                    <img className="img-fluid" src={productDetail.img} style={{width: '100%'}}/>
+                </div>
+                <div className='col-lg-6' style={{padding: '20px'}}>
+                    <p style={{fontSize: '40px', fontWeight: 'bold'}}>{productDetail.name}</p>
+                    <Rating productRating={productDetail}/>
+                    <h3>${productDetail.price}</h3>
+                    <p>{productDetail.desc}</p>
+                    <h6>Availability: <span style={{fontWeight: 'normal'}}>{productDetail.availability}</span></h6>
+                    <button className='btn-dark' onClick={()=> addToCart(productDetail) }>ADD TO CART</button>
+                </div>
+            </div>
+        </div>
     ) : (
-        <div>Loading...</div>
+        <div>
+            <h1>Nothing to show here</h1>
+        </div>
     )
     return ( 
-        <div>
-            <p>Product detail</p>
-            {prod}
+        <div className='product-detail'>
+            {prodetail}
         </div>
-     );
+    );
 }
  
 export default ProductDetail;

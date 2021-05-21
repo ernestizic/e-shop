@@ -11,6 +11,26 @@ body {
   font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
   font-size: 27px;
 }
+.navbar-content{
+  display: flex;
+  justify-content:space-between;
+}
+.navbar-content ul {
+  list-style-type: none;
+  margin-top: 15px;
+  padding: 0;
+}
+.navbar-content ul li{
+  display: inline;
+  float: left;
+}
+.navbar-content a{
+  color: #666;
+}
+.navbar-content a:hover{
+  color: #b4b4b4;
+}
+
 a{
   text-decoration: none;
   color: black;
@@ -121,7 +141,7 @@ a:hover{
   margin-top: 40px;
 }
 .wrapper {
-  margin-top: 80px;
+  margin-top: 100px;
 }
 .sidebar-wrapper {
   width: 20%;
@@ -161,16 +181,6 @@ a:hover{
   color: #fff;
 }
 
-.product-detail{
-  margin-top: 80px;
-}
-.contact {
-  margin-top: 80px;
-}
-.features {
-  margin-top: 80px;
-}
-
 .totals{
   border: 1px solid grey;
   width: 40%;
@@ -184,3 +194,6 @@ a:hover{
 .checked {
   color: #ffa500;
 }
+
+
+

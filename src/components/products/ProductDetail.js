@@ -39,7 +39,7 @@ const ProductDetail = () => {
         </div>
     )
     return ( 
-        <div className='product-detail'>
+        <div className='wrapper'>
             {prodetail}
         </div>
     );

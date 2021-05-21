@@ -6,34 +6,25 @@ const Navbar = () => {
     const {cartItems} = useContext(CartContext);
  
     return ( 
-        <nav className="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
-            <div className="container">
+        <nav className="navbar bg-dark fixed-top">
+            <div className='container navbar-content'>
                 <Link className="navbar-brand" to="/"> <span style={{color: 'red', fontStyle:'italic', fontSize:'32px'}}>E</span> <span style={{color: 'grey'}}>Shop</span> </Link>
-                <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
-                <span className="navbar-toggler-icon"></span>
-                </button>
-                <div className="collapse navbar-collapse" id="navbarText">
-                    <ul className="navbar-nav me-auto mb-2 mb-lg-0">
-                        <li className="nav-item">
-                            <Link className="nav-link active" aria-current="page" to="/">Home</Link>
-                        </li>
-                        <li className="nav-item">
-                            <Link className="nav-link disabled" to="/features">Features</Link>
-                        </li>
-                        <li className="nav-item">
-                            <Link className="nav-link disabled" to="/contact">Contact</Link>
-                        </li>
-                    </ul>
-                    <ul className="navbar-nav ">
-                        <li className="nav-item">
-                            <Link className="nav-link" to="/cart">
-                                <i className="material-icons">local_grocery_store</i> 
-                                <span className="badge rounded-pill bg-danger">{cartItems.length}</span> 
-                            </Link>
-                        </li>
-                    </ul>
-                </div>
+                <ul className="nav-item">
+                    <li>
+                        <Link className="nav-link" to="#">
+                            <i class="material-icons">person_add_alt</i> 
+                        </Link>
+                    </li>
+
+                    <li className="nav-item">
+                        <Link className="nav-link" to="/cart">
+                            <i className="material-icons" style={{fontSize: '23px'}}>local_grocery_store</i> 
+                            <span className="badge rounded-pill bg-danger">{cartItems.length}</span> 
+                        </Link>
+                    </li>
+                </ul>
             </div>
+
         </nav>
      );
 }

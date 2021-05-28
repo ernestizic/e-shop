@@ -11,9 +11,6 @@ const IndexPage = () => {
         <React.Fragment>
             
             <div className='container wrapper'>
-                <div className='big-search'>
-                    <Search />
-                </div>
                 <div className="sidebar-wrapper">
                     <Search />
                     <h6>Category</h6>

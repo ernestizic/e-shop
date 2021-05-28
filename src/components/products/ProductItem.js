@@ -8,7 +8,7 @@ const ProductItem = ({product}) => {
     const {addToCart} = useContext(CartContext);
 
     return ( 
-        <div className="col-lg-3 col-sm-4 item-column"  title={product.name}>
+        <div className="col-6 col-md-3 item-column"  title={product.name}>
             <Link to={`/products/${product.id}`}>
                 <img className="img-fluid" src={product.img}/>
                 <div className="middle">

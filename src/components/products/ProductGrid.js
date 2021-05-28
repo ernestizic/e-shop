@@ -17,7 +17,7 @@ const ProductGrid = () => {
             </div>
         </div>
     ) : (
-        <div> No products left </div>
+        <div> No item found </div>
     )
     return (
         <div>

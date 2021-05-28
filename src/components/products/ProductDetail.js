@@ -13,7 +13,7 @@ const ProductDetail = () => {
     const [productDetail, setProductDetail] = useState(null);
 
     useEffect(() => {
-        setProductDetail(products.find(x => x.id == product_id))
+        setProductDetail(products.find(item => item.id == product_id))
     }, [])
 
     const prodetail = productDetail ? (
@@ -29,7 +29,15 @@ const ProductDetail = () => {
                     <h3>${productDetail.price}</h3>
                     <p>{productDetail.desc}</p>
                     <h6>Availability: <span style={{fontWeight: 'normal'}}>{productDetail.availability}</span></h6>
-                    <button className='btn-dark' onClick={()=> addToCart(productDetail) }>ADD TO CART</button>
+                    {/*<button className='btn-dark' onClick={()=> addToCart(productDetail) }>ADD TO CART</button>*/}
+
+                    {
+                        productDetail.availability === 'in stock' ? (
+                            <button className='btn' onClick={()=> addToCart(productDetail)}>ADD TO CART</button>
+                            ) : (
+                                <button className='btn' disabled>Out of stock</button>
+                            )
+                    }
                 </div>
             </div>
         </div>

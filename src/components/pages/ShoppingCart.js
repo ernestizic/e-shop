@@ -64,20 +64,21 @@ const ShoppingCart = () => {
 
             {cartItems.length !== 0 && (
                 <div className="container">
-                    <button className="btn btn-danger" onClick={emptyCart}>Empty cart</button>
-                    <Link to='/' className="btn btn-primary" style={{float: 'right'}}>Continue Shopping</Link>
+                    <button className="btn" onClick={emptyCart}>Empty cart</button>
+                    <Link to='/' className="btn" style={{float: 'right'}}>Continue Shopping</Link>
                     <hr />
 
-                    <div className='totals'>
-                        <p style={{fontWeight: 'bold'}}>Items Price: <span style={{float: 'right'}}>${itemsPrice.toFixed(2)}</span></p>
+                        <div className='totals'>
+                            <p style={{fontWeight: 'bold'}}>Items Price: <span style={{float: 'right'}}>${itemsPrice.toFixed(2)}</span></p>
 
-                        <p>Tax Price: <span style={{float: 'right'}}>${taxPrice.toFixed(2)}</span></p>
+                            <p>Tax Price: <span style={{float: 'right'}}>${taxPrice.toFixed(2)}</span></p>
 
-                        <p>Shipping Price: <span style={{float: 'right'}}>${shippingPrice.toFixed(2)}</span></p>
-                        <hr/>
-                        <p style={{fontSize: '30px'}}>Total Price:<span style={{float: 'right'}}>${totalPrice.toFixed(2)}</span></p>
-                    </div>
-
+                            <p>Shipping Price: <span style={{float: 'right'}}>${shippingPrice.toFixed(2)}</span></p>
+                            <hr/>
+                            <p style={{fontSize: '30px'}}>Total Price:<span style={{float: 'right'}}>${totalPrice.toFixed(2)}</span></p>
+                            <Link to='/checkout' id="checkout-btn" className='btn btn-dark'>Proceed to checkout</Link>
+                        </div>
+                        
                 </div>
                 
             )}

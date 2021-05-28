@@ -2,6 +2,7 @@ import React, { useContext } from 'react';
 import { CartContext } from '../contexts/CartContext';
 import {Link} from 'react-router-dom'
 import Rating from '../ui/Rating';
+import { FaArrowRight } from 'react-icons/fa';
 
 const ProductItem = ({product}) => {
     const {addToCart} = useContext(CartContext);
@@ -24,11 +25,12 @@ const ProductItem = ({product}) => {
 
             {
                 product.availability === 'in stock' ? (
-                    <button id="add-to-cart-btn" onClick={()=> addToCart(product) }>ADD TO CART</button>
+                    <button id="add-to-cart-btn" onClick={()=> addToCart(product) }>Add to Cart <FaArrowRight /></button>
                     ) : (
-                        <button id="add-to-cart-btn" disabled>Out of stock</button>
+                        <button id="out-of-stock-btn" disabled>Out of stock</button>
                     )
             }
+
         </div>
      );
 }

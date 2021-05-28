@@ -13,7 +13,7 @@ const Search = () => {
     return ( 
         <input 
             type='search' 
-            placeholder="Search"
+            placeholder="Search products"
             style={{width:'100%', textIndent: '5px', background: '#D3D3D3', margin: '10px 0'}}
             value={searchTerm}
             onChange={(e)=> onChange(e.target.value)}

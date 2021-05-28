@@ -9,7 +9,11 @@ const IndexPage = () => {
     const {all, gifts, animals, vehicles, tech, lad} = useContext(ProductContext)
     return (
         <React.Fragment>
+            
             <div className='container wrapper'>
+                <div className='big-search'>
+                    <Search />
+                </div>
                 <div className="sidebar-wrapper">
                     <Search />
                     <h6>Category</h6>
